@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Libre+Barcode+39+Text&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ff53a1b0fb.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -13,42 +16,43 @@
 </head>
 
 <body>
-    <header class="container-fluid text-center text-white bg-dark p-2 weather-header">
-        <h1>Weather Dashboard</h1>
+    <header class="container-fluid ">
+        <h1 class="app-title text-center text-white bg-dark p-2 weather-header">Weather Dashboard</h1>
     </header>
 
-    <!-- container --> 
-    <main class="container col col-12">
-      <div class="row bg-primary">
-        <section class="col col-3 bg-warning py-4 mblank-0" id="search-form">
-    <main>
-    <!-- aside with the search -->
-    <div class="form-group">
-        <label for="exampleInputPassword1">Search For A City:</label>
-        <input
-        type="text"
-        class="form-input"
-        id="searchCity"
-        autofocus="true"
-        aria-describedby="searchCity"
-      />
-      <button type="submit" class="btn btn-primary" id="searchCityForm">
-      </div>
-    <!-- search history div -->
-<div>
-    <h3>SEARCH HISTORY DIV</h3>
-</div>
     <!-- container -->
-    <article class="container">
-        <h3>Todays weather/ forecast</h3>
-    </article>
-    <!-- section for todays weather -->
-    <!-- section for the forecast -->
+    <main>
+        <div class="tr row bg-info">
+            <section class="col-lg-3 col-12 bg-warning py-4 mblank-0 d-flex flex-column" id="search-form">
+                <!-- aside with the search -->
+                <div class="form-group">
+                    <label for="findCity">Search For A City:</label>
+                    <input type="text" class="form-input" id="searchCity" autofocus="true"
+                        aria-describedby="searchCity" />
+                    <button type="submit" class="btn btn-primary" id="searchCityForm">
+                </div>
+                <!-- search history div -->
+                <!-- <div>
+                    <h3>SEARCH HISTORY DIV</h3>
+                </div> -->
+                <!-- container -->
+                <!-- <article class="container">
+                    <h3>Todays weather/ forecast</h3>
+                </article> -->
+                <!-- section for todays weather -->
+                <!-- <section class="todays-weather bg-info">
 
-    <!-- use day.js to easily format dates -->
+                </section> -->
+                <!-- section for the forecast -->
+
+                <!-- use day.js to easily format dates -->
+        </div>
+
+    </main>
 
     <script type="text/javascript" src="/jquery/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 
 </html>
