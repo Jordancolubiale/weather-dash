@@ -25,31 +25,41 @@
         <div class="tr row bg-info">
             <section class="col-lg-3 col-12 bg-warning py-4 mblank-0 d-flex flex-column" id="search-form">
                 <!-- aside with the search -->
-                <div class="form-group">
-                    <label for="findCity">Search For A City:</label>
-                    <input type="text" class="form-input" id="searchCity" autofocus="true"
-                        aria-describedby="searchCity" />
-                    <button type="submit" class="btn btn-primary" id="searchCityForm">
+                <div class="col-12">
+                    <form>
+                        <div class="mb-3">
+                            <h2>Search City</h2>
+                            <input type="text" class="form-control" placeholder="ex: Media">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit</button>
+                        <hr>
+                    </form>
+                    <div id = "history" class="search-history">
+
+                    </div>
+                    <ul></ul>
                 </div>
-                <!-- search history div -->
-                <!-- <div>
-                    <h3>SEARCH HISTORY DIV</h3>
-                </div> -->
-                <!-- container -->
-                <!-- <article class="container">
-                    <h3>Todays weather/ forecast</h3>
-                </article> -->
-                <!-- section for todays weather -->
-                <!-- <section class="todays-weather bg-info">
+        </div>
+        </section>
 
-                </section> -->
-                <!-- section for the forecast -->
 
-                <!-- use day.js to easily format dates -->
+
+        <!-- container -->
+
+        <!-- section for todays weather -->
+        <div style="border: 1px solid black;">
+            <section id = "today" class="todays-weather bg-info">
+
+            </section>
+            <!-- section for the forecast -->
+            <section id = "forecast" class="invisible">
+
+            </section>
+            <!-- use day.js to easily format dates -->
         </div>
 
     </main>
-
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script type="text/javascript" src="/jquery/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
 </body>

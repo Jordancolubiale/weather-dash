@@ -2,32 +2,46 @@
 // search history as an empty array
 var searchEm = []
 // weather api root url
-var weatherAPI = []
+var weatherAPI = "https://api.openweathermap.org"
 // api key
 var APIkey = "e94ba6acd3f306ff83ce3acc9c5c7b82"
 // DOM element references
 // search form
-var searchForm = document.querySelector (".form-group")
+var searchForm = document.querySelector(".form-group")
 // search input
-var searchInput = document.querySelector (".form-input")
+var searchInput = document.querySelector(".form-input")
 // container/section for today's weather
+var todaysWeather = document.querySelector(".todays-weather")
 // container/section for the forecast 
+var forecast = document.getElementById("#forecast")
 // search history container
-
+var searchHistory = document.getElementById("#history")
+dayjs.extend(window.dayjs_plugin_utc)
+dayjs.extend(window.dayjs_plugin_timezone)
 
 // Function to display the search history list.
 function renderSearchHistory() {
     // empty the search history container
-
+    searchHistory.innerHTML = ""
     // loop through the history array creating a button for each item
-
-    // append to the search history container
+         // for (var i = 0; i < searchEm.length; i++) {}
+         for (var i =searchEm.length-1; i >= 0; i--) {
+            var btn = documnet.createElement('button');
+            btn.setAttribute('type','button');
+            btn.setAttribute('aria-controls', 'today forecast');
+            btn.classList.add('history-btn', 'btn-history');
+          // append to the search history container
+            btn.setAttribute('data-search', searchEm[i]);
+            btn.textContent = searchEm[i];
+            searchHistory.append(btn)
+  } 
 }
 
 // Function to update history in local storage then updates displayed history.
 function appendToHistory(search) {
     // push search term into search history array
-
+    searchEm.push(search);
+    localStorage.setItem("search-history", JSON.stringify(searchEm))
     // set search history array to local storage
     renderSearchHistory();
 }
@@ -35,7 +49,10 @@ function appendToHistory(search) {
 // Function to get search history from local storage
 function initSearchHistory() {
     // get search history item from local storage
-
+var storedLocal = localStorage.getItem("search-history")
+if (storedLocal) {
+    searchEm = JSON.parse(storedLocal)
+}
     // set search history array equal to what you got from local storage
     renderSearchHistory();
 }
