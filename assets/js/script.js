@@ -110,11 +110,22 @@ function renderItems(city, data) {
 // endpoint; then, calls functions to display current and forecast weather data.
 function fetchWeather(location) {
     // varialbles of longitude, latitude, city name - coming from location
-
+var {lat} = location
+var {lon} = location
+var city = location.name
     // api url
-
+var apiUrl = '${weatherAPI}/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${APIkey}'
     // fetch, using the api url, .then that returns the response as json, .then that calls renderItems(city, data)
-
+    fetch(apiUrl)
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (data) {
+      renderItems(city, data);
+    })
+    .catch(function (err) {
+      console.error(err);
+    });
 }
 
 function fetchCoords(search) {
